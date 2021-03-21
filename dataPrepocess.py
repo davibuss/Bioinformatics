@@ -66,7 +66,6 @@ def getCoordinates(filename,size=128):
 
 
 #Function that need to be called in the notebook
-#cleaner code in colab
 def getImageTiles(filename,size=128):
 
     #Getting the appropriate upper left coordinates 
