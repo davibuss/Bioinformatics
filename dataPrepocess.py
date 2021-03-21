@@ -64,6 +64,8 @@ def getCoordinates(filename,size=128):
 
     return rRegionList
 
+
+#Function that need to be called in the notebook
 def getImageTiles(filename,size=128):
 
     #Getting the appropriate upper left coordinates 
