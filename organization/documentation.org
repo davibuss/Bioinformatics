@@ -1,0 +1,29 @@
+#+TITLE: Documentation
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+* Bioinfo Project Documentation
+
+** File Organization
+
+Files are organized in the following way in order to more easily manage the data preprocessing step.
+
+#+BEGIN_SRC shell :results verbatim raw  code :exports results
+tree content
+#+END_SRC
+
+#+RESULTS:
+#+begin_src shell
+content
+└── drive
+    └── MyDrive
+        └── BioinfoImages
+            ├── epithelioid
+            │   ├── TIFdir
+            │   └── XMLdir
+            ├── nonEpithelioid
+            │   ├── TIFdir
+            │   └── XMLdir
+            └── pickles
+                ├── davideData.pickle
+                └── pedroData.pickle
+
+#+end_src
