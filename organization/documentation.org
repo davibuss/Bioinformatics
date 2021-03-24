@@ -1,8 +1,7 @@
 #+TITLE: Documentation
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-* Bioinfo Project Documentation
 
-** File Organization
+* File Organization
 
 Files are organized in the following way in order to more easily manage the data preprocessing step.
 
@@ -16,14 +15,25 @@ content
 └── drive
     └── MyDrive
         └── BioinfoImages
-            ├── epithelioid
-            │   ├── TIFdir
-            │   └── XMLdir
-            ├── nonEpithelioid
-            │   ├── TIFdir
-            │   └── XMLdir
+            ├── BioinfoImagesDavide
+            │   ├── epithelioid
+            │   │   ├── TIFdir
+            │   │   └── XMLdir
+            │   └── nonEpithelioid
+            │       ├── TIFdir
+            │       └── XMLdir
+            ├── BioinfoImagesPedro
+            │   ├── epithelioid
+            │   │   ├── TIFdir
+            │   │   └── XMLdir
+            │   └── nonEpithelioid
+            │       ├── TIFdir
+            │       └── XMLdir
             └── pickles
                 ├── davideData.pickle
                 └── pedroData.pickle
 
 #+end_src
+
+Images are divided into Pedro and Davide sections in order to be able to be able to preprocess them separately and in parallel.
+The results of the preprocessing step then can be saved into pickles in the pickle folder wich can be easily accesed and concatenated when needed.
