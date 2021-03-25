@@ -37,3 +37,32 @@ content
 
 Images are divided into Pedro and Davide sections in order to be able to be able to preprocess them separately and in parallel.
 The results of the preprocessing step then can be saved into pickles in the pickle folder wich can be easily accesed and concatenated when needed.
+
+** Images subdivision
+
+*** Pedro
+**** Non Epithelioid
++ 86
++ 87
++ 101
++ 47 - /Bifasic/
++ 62 - /Bifasic/
+**** Epithelioid
++ 3
++ 29
++ 39
++ 61
++ 10
+*** Davide
+**** Non epitelioidi
++ 92 - /Bifasic/
++ 104 - /Bifasic/
++ 105 - /Bifasic/
++ 114
++ 64
+**** Epitelioidi
++ 2
++ 120
++ 14
++ 16
++ 28
