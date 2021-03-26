@@ -40,29 +40,21 @@ The results of the preprocessing step then can be saved into pickles in the pick
 
 ** Images subdivision
 
-*** Pedro
-**** Non Epithelioid
-+ 86
-+ 87
-+ 101
-+ 47 - /Bifasic/
-+ 62 - /Bifasic/
-**** Epithelioid
-+ 3
-+ 29
-+ 39
-+ 61
-+ 10
-*** Davide
-**** Non epitelioidi
-+ 92 - /Bifasic/
-+ 104 - /Bifasic/
-+ 105 - /Bifasic/
-+ 114
-+ 64
-**** Epitelioidi
-+ 2
-+ 120
-+ 14
-+ 16
-+ 28
+*** Epithelioid
+
+| Pedro | Davide |
+|-------+--------|
+|     3 |      2 |
+|    29 |    120 |
+|    39 |     14 |
+|    61 |     16 |
+|    10 |     28 |
+
+*** Non Epithelioid
+|        Pedro | Davide        |
+|--------------+---------------|
+|           86 | 92 - /Bifasic/  |
+|           87 | 104 - /Bifasic/ |
+|          101 | 105 - /Bifasic/ |
+| 47 - /Bifasic/ | 114           |
+| 62 - /Bifasic/ | 64            |
