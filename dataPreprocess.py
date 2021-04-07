@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 from math import floor,ceil,sqrt
 from openslide import OpenSlide
+from tqdm.notebook import tqdm
 
 def distance(p1,p2):
   distance = sqrt( ((p1[0]-p2[0])**2)+((p1[1]-p2[1])**2))
@@ -74,7 +75,7 @@ def getImageTiles(filenameImage,filenameXML,size=128):
 
   regionList = []
 
-  for region in rRegionList:
+  for region in tqdm(rRegionList):
     regionImg = image.read_region(region,0,(size,size))
     regionList.append(regionImg)
 
