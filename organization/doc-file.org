@@ -1,0 +1,108 @@
+#+TITLE: Documentation
+#+setupfile: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* File Organization
+
+Files are organized in the following way in order to more easily manage the data preprocessing step.
+
+#+BEGIN_SRC shell :results verbatim raw  code :exports results
+tree content
+#+END_SRC
+
+#+RESULTS:
+#+begin_src shell
+content
+└── drive
+    └── MyDrive
+        └── BioinfoImages
+            ├── BioinfoImagesDavide
+            │   ├── epithelioid
+            │   │   ├── TIFdir
+            │   │   └── XMLdir
+            │   ├── nonEpithelioid
+            │   │   ├── TIFdir
+            │   │   └── XMLdir
+            │   └── useless
+            │       ├── TIFdir
+            │       └── XMLdir
+            ├── BioinfoImagesPedro
+            │   ├── epithelioid
+            │   │   ├── TIFdir
+            │   │   └── XMLdir
+            │   ├── nonEpithelioid
+            │   │   ├── TIFdir
+            │   │   └── XMLdir
+            │   └── useless
+            │       ├── TIFdir
+            │       └── XMLdir
+            └── pickles
+                ├── Davide
+                │   ├── image.p
+                │   └── labels.p
+                └── Pedro
+                    ├── image.p
+                    └── labels.p
+
+26 directories, 4 files
+#+end_src
+
+Images are divided into Pedro and Davide sections in order to be able to be able to preprocess them separately and in parallel.
+The results of the preprocessing step then can be saved into pickles in the pickle folder which contains a pickle for the images and the labels. These pickles significantly reduce the amount of time needed for fetching the dataset.
+
+** Images subdivision
+
+*** Epithelioid
+
+| Pedro | Davide |
+|-------+--------|
+|     3 |      2 |
+|    29 |    120 |
+|    39 |     14 |
+|    61 |     16 |
+|    10 |     28 |
+
+*** Non Epithelioid
+|        Pedro | Davide        |
+|--------------+---------------|
+|           86 | 92 - /Bifasic/  |
+|           87 | 104 - /Bifasic/ |
+|          101 | 105 - /Bifasic/ |
+| 47 - /Bifasic/ | 114           |
+| 62 - /Bifasic/ | 64            |
+
+*** Useless
+| Pedro | Davide |
+|-------+--------|
+| 98    |80      |
+| 89    |88      |
+| 9     |79      |
+| 97    |81      |
+| 75    |77      |
+
+* Python Files and Jupyter Notebooks
+
+
+#+BEGIN_SRC shell :results verbatim raw  code :exports results
+ls ../
+#+END_SRC
+
+#+RESULTS:
+#+begin_src shell
+dataPreprocess.py
+Directories.ipynb
+network.ipynb
+organization
+README.md
+Training.ipynb
+Trial.ipynb
+#+end_src
+
+
+** dataPreprocess.py
+This file mainly has the function of utilizing the read_region function of the OpenSlide library in order to interact with the images. Each region selected by us is divided into small tiles of size 224 x 224.
+
+** TODO Training.py
+File that must be renamed. It mainly serves the purpose of calling the functions defined in dataPreprocess.py and obtaining the image tiles. These tiles are them turned into tensorflow tensors and then they are pickled. Pickles are a format that allows us to quickly access the tiles without having to call the read_region function each time.
+
+** network.py
+This is where the network training takes place and possibly where the network is defined.
